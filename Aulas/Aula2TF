@@ -1,0 +1,561 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPDqi+/f4MFYs2D0e8L4Ceu",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/joaocesar2001/Introducao-a-python-aplicado-a-FAE/blob/main/Aulas/Aula2TF\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "5VTER3CSpzJ_"
+      },
+      "outputs": [],
+      "source": [
+        "import math"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(math)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "olL7VsBaqvYJ",
+        "outputId": "a2c0b7bc-9c7a-4f07-851b-70bba661ce80"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<module 'math' (built-in)>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Exemplo da aula\n",
+        "cateto_oposto = 4\n",
+        "cateto_adjacente = 2\n",
+        "tg_theta= cateto_oposto/cateto_adjacente\n",
+        "theta =math.atan(tg_theta)\n",
+        "print(theta, \"em radianos\")\n",
+        "math.degrees(theta)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EBV0U34prKsv",
+        "outputId": "6e7b90b6-3031-4e47-d37b-913306e3df8c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1.1071487177940904 em radianos\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "63.43494882292201"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Fução que transforma radianos em graus\n",
+        "theta_graus = math.degrees(theta)\n",
+        "print(theta_graus)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YOlDsan1tAWf",
+        "outputId": "1b2b2e7b-7fae-4f4b-cf5d-3491917e794a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "63.43494882292201\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Transformando em graus \"na marra\"\n",
+        "theta_graus = theta*180/math.pi\n",
+        "print(theta_graus)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3w6zYNQMtYB3",
+        "outputId": "8e681eff-290a-4f39-a53e-87c483589558"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "63.43494882292201\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Exercício - Determinaro angulo de cos(theta) = sqrt(2)/2\n",
+        "math.degrees(math.acos(math.sqrt(2)/2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bktPt0cduzGq",
+        "outputId": "af9099a1-f8da-4eb6-bf6a-1f714a598d1c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "45.0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Composição\n",
+        "\n",
+        "x = math.sin((theta_graus/360.0)*2*math.pi)\n",
+        "print(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bT8iFlYbu_fC",
+        "outputId": "c5c5c495-5985-409b-c59e-8b2554f661ac"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.8944271909999159\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x2 = math.sin(math.radians(theta_graus))\n",
+        "print(x2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1Vs9VSfZ1cz3",
+        "outputId": "cf929995-7ddb-40c3-fd7a-fb96b9cbb644"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.8944271909999159\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "horas = 2\n",
+        "minutos = horas*60"
+      ],
+      "metadata": {
+        "id": "flJorfSK2Grc"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "horas*60= minutos\n",
+        "#Não faz sentido atribuir um valor a uma operação"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 106
+        },
+        "id": "VZvZcHTE2Zxj",
+        "outputId": "53ca7281-b072-400f-fb34-9b39ddce772b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "cannot assign to expression here. Maybe you meant '==' instead of '='? (ipython-input-4103417707.py, line 1)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipython-input-4103417707.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    horas*60= minutos\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m cannot assign to expression here. Maybe you meant '==' instead of '='?\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def nome_da_funcao(argumentos_da_funcao):       #Cabeçário (header) da função\n",
+        "  declaracao = 'Esse éo corpo da função. É onde são feitas as declarações da função'"
+      ],
+      "metadata": {
+        "id": "5vmQa-SN2caz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def print_poema():\n",
+        "  print(\"Caminante,no hay camino,\")\n",
+        "  print(\"Se hacecamino alandar.\")"
+      ],
+      "metadata": {
+        "id": "91ST6hhJ3pjh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print_poema()\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VSfCRfZI3sCQ",
+        "outputId": "2515db5f-5c1e-49a3-8840-0db01e7657d0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Caminante,no hay camino,\n",
+            "Se hacecamino alandar.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def verso_poema():\n",
+        "  print('Caminante, son tus huellas')\n",
+        "  print('el camino y nada más;')\n",
+        "\n",
+        "  print_poema()\n",
+        "\n",
+        "  print(\"todo resto do poema...\")\n",
+        "\n",
+        "verso_poema()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NxB1b2yF325h",
+        "outputId": "17ec923a-464a-46c6-e843-103ee60c99bf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Caminante, son tus huellas\n",
+            "el camino y nada más;\n",
+            "Caminante,no hay camino,\n",
+            "Se hacecamino alandar.\n",
+            "todo resto do poema...\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Exercicio 1 - Cria uma funçãoque torne um argumento e imprima o valor e o tipo dele.\n",
+        "arg = input(\"Insira o argumento da funcao:\")\n",
+        "def funcao1(arg):\n",
+        "  print(arg)\n",
+        "  print(type(arg))\n",
+        "\n",
+        "funcao1(arg)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fKGD1DaY93oW",
+        "outputId": "eac32ea2-6ca0-4796-82db-25724feccb15"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Insira o argumento da funcao:x\n",
+            "x\n",
+            "<class 'str'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Exercicio 2 - Crie uma função que calcule e imprima velocidade media de um objeto a partir de uma posição inicial, a final e o tempo transcorrido para um objeto em MRU. Também crie uma função que calcule e imprima a velocidade de um objeto a partir da aceleração constante e o tempo (MRUA) (p.ex queda livre)\n",
+        "\n",
+        "s0 = int(input(\"Insira a posição inicial em metros:\"))\n",
+        "sf = int(input(\"Insira a posição final em metros:\"))\n",
+        "t = int(input(\"Insira o tempo em segundos:\"))\n",
+        "a = int(input(\"Insira a aceleração m/s²:\"))\n",
+        "def velocidade_media(s0,sf,t):\n",
+        "  vm = (sf-s0)/t\n",
+        "  v = a*t\n",
+        "  print(vm,\"m/s\")\n",
+        "  print(v, \"m/s\")\n",
+        "\n",
+        "velocidade_media(s0,sf,t)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mpcnQExE_gYb",
+        "outputId": "9d6b8281-d785-4e71-8fd6-1efebbe42b25"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Insira a posição inicial em metros:12\n",
+            "Insira a posição final em metros:12\n",
+            "Insira o tempo em segundos:12\n",
+            "Insira a aceleração m/s²:2\n",
+            "0.0 m/s\n",
+            "24 m/s\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Exercicio 3 - Crie uma função para calcular o ângulo zenital do sol (da semana passada) tomando como argumento as medidas da altura e o comprimento da sombra.\n",
+        "altura = int(input(\"Insira a altura em metros:\"))\n",
+        "comprimento = int(input(\"Insira o comprimento em metros:\"))\n",
+        "def zenital(altura, comprimento):\n",
+        "  angulo = math.atan(altura/comprimento)\n",
+        "  print(math.degrees(angulo))\n",
+        "\n",
+        "zenital(altura, comprimento)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MlduZhe3EuTZ",
+        "outputId": "ceb52736-6832-4fe8-f645-344e45ec4f67"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Insira a altura em metros:12\n",
+            "Insira o comprimento em metros:12\n",
+            "45.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Exercicio 4 - Crie uma função que faça a conversão de uma medida inicialmente em milhas para m, e outra para o inverso; uma de horas para segundos, e o inverso. Utilize estas funções para resolver novamente o primeiro exercício da semana passada (dacorrida). Se uma pessoa demora 30 minutos em 4 milhas, qual a velocidade media em km/h? e o tempo medio por kilometro\n",
+        "\n",
+        "milhas = float(input(\"Insira a medida em milhas:\"))\n",
+        "horas = float(input(\"Insira o tempo em horas:\"))\n",
+        "def milhas_para_metros(milhas):\n",
+        "  metros = milhas*1609.34\n",
+        "  return metros\n",
+        "\n",
+        "def horas_para_segundos(horas):\n",
+        "  segundos = horas*3600\n",
+        "  return segundos\n",
+        "\n",
+        "velocidade_media2 = 3.6*(milhas_para_metros(milhas)/horas_para_segundos(horas))\n",
+        "print(velocidade_media2, \"k/m\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WID1MpFDAJXN",
+        "outputId": "3aa19d9a-4459-46ce-b153-4070b4748e48"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Insira a medida em milhas:4\n",
+            "Insira o tempo em horas:0.5\n",
+            "12.87472 k/m\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Exercicio - 5 Crie funções para calcular o outros exemplos das aulas anteriores: IMC, Volume de uma esfera, distância entre pontos de máximos de difração. Decida quais serão os argumentos e o valor retornado.\n",
+        "peso = float(input(\"Insira o peso em kg:\"))\n",
+        "altura = float(input(\"Insira a altura em metros:\"))\n",
+        "raio = float(input(\"Insira o raio da esfera em metros:\"))\n",
+        "\n",
+        "\n",
+        "def IMC(peso,altura):\n",
+        "  Calculo_IMC = peso/(altura**2)\n",
+        "  return Calculo_IMC\n",
+        "\n",
+        "IMC(peso,altura)\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "def Volume_esfera(raio):\n",
+        "  Volume = 4*math.pi*(raio**3)/3\n",
+        "  return Volume\n",
+        "\n",
+        "Volume_esfera(raio)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0_NyFgnQFow1",
+        "outputId": "6186155f-5783-4bd2-b556-6622e48bbcbb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Insira o peso em kg:80\n",
+            "Insira a altura em metros:1.80\n",
+            "Insira o raio da esfera em metros:4\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "268.082573106329"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 98
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "YV0BfUreKaqe"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
